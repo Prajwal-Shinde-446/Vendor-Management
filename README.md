@@ -70,7 +70,7 @@ curl -X GET http://127.0.0.1:8000/api/vendors/vendor_code_here/ -H "Authorizatio
 curl -X POST http://127.0.0.1:8000/api/vendors/ -H "Content-Type: application/json" -H "Authorization: Token your_superuser_token_here" -d '{"name": "New Vendor", "contact_details": "Contact Info", "address": "Vendor Address"}'
 
 ## 4. Update an Existing Vendor:
-curl -X PUT http://127.0.0.1:8000/api/vendors/vendor_code_here/ -H "Content-Type: application/json" -H "Authorization: Token your_superuser_token_here" -d '{"name": "Updated Vendor Name"}'
+curl -X PATCH http://127.0.0.1:8000/api/vendors/vendor_code_here/ -H "Content-Type: application/json" -H "Authorization: Token your_superuser_token_here" -d '{"name": "Updated Vendor Name"}'
 
 ## 5. Delete a Vendor:
 curl -X DELETE http://127.0.0.1:8000/api/vendors/vendor_code_here/ -H "Authorization: Token your_superuser_token_here"
@@ -90,7 +90,7 @@ curl -X GET http://127.0.0.1:8000/api/purchase_orders/po_number_here/ -H "Author
 curl -X POST http://127.0.0.1:8000/api/purchase_orders/ -H "Content-Type: application/json" -H "Authorization: Token your_superuser_token_here" -d '{"vendor": 1, "order_date": "2023-01-01", "delivery_date": "2023-01-10", "items": [{"name": "Item1", "quantity": 5}], "quantity": 5, "status": "Pending"}'
 
 ## 4. Update an Existing Purchase Order:
-curl -X PUT http://127.0.0.1:8000/api/purchase_orders/po_number_here/ -H "Content-Type: application/json" -H "Authorization: Token your_superuser_token_here" -d '{"status": "Completed", "quality_rating": 4.5}'
+curl -X PATCH http://127.0.0.1:8000/api/purchase_orders/po_number_here/ -H "Content-Type: application/json" -H "Authorization: Token your_superuser_token_here" -d '{"status": "Completed", "quality_rating": 4.5}'
 
 ## 5. Delete an Existing Purchase Order
 curl -X DELETE http://127.0.0.1:8000/api/purchase_orders/po_number_here/ -H "Authorization: Token your_superuser_token_here"
