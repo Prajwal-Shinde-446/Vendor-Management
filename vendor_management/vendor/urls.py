@@ -8,7 +8,7 @@ urlpatterns = [
     path('api/purchase_orders/<str:pk>/acknowledge/', PurchaseOrderAcknowledgeView.as_view(), name='purchaseorder-acknowledge'),
     path('api/vendors/', VendorListCreateView.as_view(), name='vendor-list-create'),
     path('api/vendors/<str:pk>/', VendorDetailView.as_view(), name='vendor-detail'),
-    path('api/vendors/<str:pk>/performance/', VendorPerformanceView.as_view(), name='vendor-performance'),
+    path('api/vendors/<str:vendor_code>/performance/', VendorPerformanceView.as_view(), name='vendor-performance'),
     path('api/purchase_orders/', PurchaseOrderListCreateView.as_view(), name='purchaseorder-list-create'),
     path('api/purchase_orders/<str:pk>/', PurchaseOrderDetailView.as_view(), name='purchaseorder-detail'),
    

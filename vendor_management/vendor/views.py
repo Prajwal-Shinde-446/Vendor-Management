@@ -34,7 +34,6 @@ class VendorListCreateView(generics.ListCreateAPIView):
     serializer_class = VendorSerializer
 
     def perform_create(self, serializer):
-        # Call the parent perform_create to save the instance
         instance = serializer.save()
 
         try:
@@ -89,16 +88,18 @@ class PurchaseOrderDetailView(generics.RetrieveUpdateDestroyAPIView):
 class PurchaseOrderAcknowledgeView(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
-
-    print("yooooooooooo")
+    print("kaki")
+  
     def post(self, request, pk):
-        print("okayyyyyyy")
+
+        print("kaka")
+        
         purchase_order = self.get_object(pk)
         
         # Check if the vendor making the request is the owner of the purchase order , Since there is no actaul vendor this part is commented
         # if request.user != purchase_order.vendor.user:
         #     return Response({"detail": "You do not have permission to acknowledge this order."}, status=status.HTTP_403_FORBIDDEN)
-
+        print("step1")
         purchase_order.acknowledgment_date = timezone.now()
         purchase_order.save()
 
